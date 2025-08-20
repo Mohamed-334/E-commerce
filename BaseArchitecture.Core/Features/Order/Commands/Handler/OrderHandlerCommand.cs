@@ -97,7 +97,7 @@ namespace BaseArchitecture.Core.Features.Orders.Commands.Handlers
             Order.StatusCode = request.StatusCode;
             Order.Status = ((OrderStatus)request.StatusCode).ToString();
             var OrderMapper = _mapper.Map(request, Order);
-            var Stock = await _orderService.ChangeProductStockForOrder(request.Id);
+            var Stock = await _orderService.ChangeProductStockForOrder(request.Id, request.StatusCode);
             if (Stock == _stringLocalizer[AppLocalizationKeys.UpdateFailed])
                 return BadRequest<string>(_stringLocalizer[AppLocalizationKeys.StockNotEnough]);
 

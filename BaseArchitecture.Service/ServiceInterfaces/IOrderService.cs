@@ -5,6 +5,6 @@ namespace EcommerceProject.Service.ServiceInterfaces
 {
     public interface IOrderService : IBaseService<Order>
     {
-        Task<string> ChangeProductStockForOrder(int OrderId);
+        Task<string> ChangeProductStockForOrder(int OrderId, int newStatusCode);
     }
 }

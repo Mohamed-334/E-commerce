@@ -40,14 +40,14 @@ namespace EcommerceProject.Service.Service
             var OrderDetails = order.OrderDetails
                 .ToList();
 
-            if (order.StatusCode == (int)OrderStatus.Delivered)
+            if (newStatusCode == (int)OrderStatus.Delivered)
             {
                 foreach (var OrderDetail in OrderDetails)
                 {
                     OrderDetail.Product.Stock -= OrderDetail.Quantity;
                 }
             }
-            else if (newStatusCode == (int)OrderStatus.Delivered && order.StatusCode == (int)OrderStatus.Cancelled)
+            else if (newStatusCode == (int)OrderStatus.Cancelled)
             {
                 foreach (var OrderDetail in OrderDetails)
                 {
