@@ -22,9 +22,6 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.18" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BaseArchitecture.Domain\BaseArchitecture.Domain.csproj" />
-  </ItemGroup>
 	<ItemGroup>
 		<EmbeddedResource Update="Shared\Localization\AppLocalization.Ar.resx">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -34,8 +31,7 @@
 		</EmbeddedResource>
 	</ItemGroup>
   <ItemGroup>
-    <Folder Include="RepositoryInterfaces\" />
-    <Folder Include="Repository\" />
+    <ProjectReference Include="..\BaseArchitecture.Domain\E-commerceProject.Domain.csproj" />
   </ItemGroup>
 
 </Project>

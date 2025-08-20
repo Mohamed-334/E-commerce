@@ -18,6 +18,8 @@ namespace BaseArchitecture.Domain.Entities
         public string? NationalNumber { get; set; }
         public string? ProfileImage { get; set; }
 
+        public ICollection<Order>? Orders { get; set; } = new HashSet<Order>();
+
         public string? GetLocalizedName()
         {
             if (string.IsNullOrEmpty(NameLocalization))

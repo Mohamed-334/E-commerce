@@ -59,5 +59,7 @@
         public const string OtpVerified = "OtpVerified";
         public const string FailedToVerifyOtp = "FailedToVerifyOtp";
         public const string PasswordChanged = "PasswordChanged";
+        public const string StockNotEnough = "StockNotEnough";
+        public const string OrderNotFound = "OrderNotFound";
     }
 }

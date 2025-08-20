@@ -255,6 +255,9 @@
   <data name="SendEmailFailed" xml:space="preserve">
     <value>Send email failed</value>
   </data>
+  <data name="StockNotEnough" xml:space="preserve">
+    <value>Some Products in Your Order is Out of Stock Now</value>
+  </data>
   <data name="Success" xml:space="preserve">
     <value>Done Sucessfully</value>
   </data>

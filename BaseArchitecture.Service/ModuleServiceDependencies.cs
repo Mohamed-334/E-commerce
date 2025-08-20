@@ -1,5 +1,7 @@
 ﻿using BaseArchitecture.Service.Service;
 using BaseArchitecture.Service.ServiceInterfaces;
+using EcommerceProject.Service.Service;
+using EcommerceProject.Service.ServiceInterfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BaseArchitecture.Service
@@ -16,6 +18,9 @@ namespace BaseArchitecture.Service
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<IAuthenticatedUserService, AuthenticatedUserService>();
             services.AddScoped<IFileService, FileService>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IOrderDetailsService, OrderDetailsService>();
+            services.AddScoped<IProductService, ProductService>();
             return services;
         }
     }

@@ -43,8 +43,15 @@ namespace BaseArchitecture.Service.Shared.BaseService
         }
         public async Task<string> AddAsync(TEntity entity)
         {
-            await _baseRepository.AddAsync(entity);
-            return _stringLocalizer[AppLocalizationKeys.Success];
+            try
+            {
+                await _baseRepository.AddAsync(entity);
+                return _stringLocalizer[AppLocalizationKeys.Success];
+            }
+            catch (Exception ex)
+            {
+                return _stringLocalizer[AppLocalizationKeys.AddFailed];
+            }
         }
         public async Task<string> EditAsync(TEntity entity)
         {

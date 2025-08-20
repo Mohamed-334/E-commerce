@@ -37,6 +37,29 @@
             public const string Delete = Prefix + "Delete/{id}";
             public const string SoftDeleteAndActivate = Prefix + "SoftDeleteAndActivate/{id}";
         }
+        public static class OrderRouting
+        {
+            public const string Prefix = Root + "Order/";
+            public const string GetById = Prefix + "GetById/{id}";
+            public const string GetList = Prefix + "GetList";
+            public const string GetPaginatedList = Prefix + "GetPaginatedList";
+            public const string Create = Prefix + "Create";
+            public const string Update = Prefix + "Update";
+            public const string UpdateOrderStatus = Prefix + "UpdateOrderStatus";
+            public const string Delete = Prefix + "Delete/{id}";
+            public const string SoftDeleteAndActivate = Prefix + "SoftDeleteAndActivate/{id}";
+        }
+        public static class ProductRouting
+        {
+            public const string Prefix = Root + "Product/";
+            public const string GetById = Prefix + "GetById/{id}";
+            public const string GetList = Prefix + "GetList";
+            public const string GetPaginatedList = Prefix + "GetPaginatedList";
+            public const string Create = Prefix + "Create";
+            public const string Update = Prefix + "Update";
+            public const string Delete = Prefix + "Delete/{id}";
+            public const string SoftDeleteAndActivate = Prefix + "SoftDeleteAndActivate/{id}";
+        }
         public static class EmailRouting
         {
             public const string Prefix = Root + "Email/";

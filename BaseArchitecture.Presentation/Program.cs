@@ -7,6 +7,7 @@ using BaseArchitecture.Infrastructure;
 using BaseArchitecture.Infrastructure.Context;
 using BaseArchitecture.Infrastructure.Seeder;
 using BaseArchitecture.Service;
+using EcommerceProject.Infrastructure.Seeder;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
@@ -71,7 +72,7 @@ namespace BaseArchitecture.Presentation
             // Register the DbContext with the connection string from configuration
             builder.Services.AddDbContext<AppDbContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("BaseArchitecture"));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("ECommerce"));
             });
 
             #endregion
@@ -186,8 +187,12 @@ namespace BaseArchitecture.Presentation
             {
                 var Users = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
                 var Roles = scope.ServiceProvider.GetRequiredService<RoleManager<Role>>();
+                var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
                 await RoleSeeder.SeedAsync(Roles);
                 await UserSeeder.SeedAsync(Users);
+                await DbSeeder.ProductSeedAsync(context);
+                await DbSeeder.OrderSeedAsync(context);
+                await DbSeeder.OrderDetailsSeedAsync(context);
             }
             #endregion
 
